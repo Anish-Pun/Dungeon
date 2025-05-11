@@ -1,19 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "dungeon.h"
+#include "player.h"
 
-int main()
-{
-    void WelcomeMsg(void);
-    
+// Function to print the dungeon structure
+int main() {
+    int roomCount = 10; // Example: Create a dungeon with 10 rooms
+    struct Dungeon* dungeon = CreateDungeon(roomCount);
+
+    // Print the dungeon structure
+    PrintDungeon(dungeon);
+
+    // Free the dungeon memory
+    FreeDungeon(dungeon);
+
     return 0;
-}
-
-
-void WelcomeMsg(void)
-{
-    printf("     __        __   _                          \n");
-    printf("    \\ \\      / /__| | ___ ___  _ __ ___   ___ \n");
-    printf("     \\ \\ /\\ / / _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\\n");
-    printf("      \\ V  V /  __/ | (_| (_) | | | | | |  __/\n");
-    printf("       \\_/\\_/ \\___|_|\\___\\___/|_| |_| |_|\\___|\n");
 }

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "dungeon.h": "c",
+        "player.h": "c"
+    }
+}
