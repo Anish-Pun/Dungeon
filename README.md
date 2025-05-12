@@ -11,3 +11,12 @@
 **Not Implemented:**
 - 4-dimensional doubly linked list (optional): The adjacency list could be replaced with a doubly linked list structure with `north`, `south`, `east`, and `west` pointers.
 
+## Player Mechanics
+
+**Implemented:**
+- Player location tracking: The player's current room is tracked using the `currentRoom` field.
+- Health points (HP) and damage: The player has `hp` and `damage` 
+
+**Not Implemented:**
+- Combat system.
+- Item usage: Items are implemented to restore HP and boost player stats.
