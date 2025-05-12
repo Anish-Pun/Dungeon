@@ -20,3 +20,14 @@
 **Not Implemented:**
 - Combat system.
 - Item usage: Items are implemented to restore HP and boost player stats.
+
+## Room Content
+
+**Implemented:**
+- Doors to other rooms: Each room connects to 1-4 other rooms.
+- Unique room IDs: Every room has a distinct `id`.
+
+**Not Implemented:**
+- Monsters: Rooms can contain monsters, tracked by the `hasMonster` field. Monsters have different types with varying `hp` and `damage` values.
+- Treasure (Crown): A crown is placed randomly; finding it ends the game.
+- Item types: Two types of items with different effects are available.
