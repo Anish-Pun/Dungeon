@@ -14,8 +14,10 @@ void InitializePlayer(struct Player *player)
     {
         player->name[len - 1] = '\0';
     }
-    player->currentRoom = 0; // Start in Room 0
 
+    player->currentRoom = 0; // Start in Room 0
+    player->hp = 100;     // Set initial health points
+    player->damage = 10;  // Set initial damage
     // Welcome message & Instructions
     printf("\n+------------------------------------------+\n");
     printf("| Welcome, %s!                              |\n", player->name);
@@ -24,6 +26,10 @@ void InitializePlayer(struct Player *player)
     printf("| Your goal is to get the crown and win    |\n");
     printf("| the game, but be careful! There are      |\n");
     printf("| monsters in some rooms, so choose wisely.|\n");
+    printf("+------------------------------------------+\n");
+    printf("| Your stats:                              |\n");
+    printf("|   HP     = %d                           |\n", player->hp);
+    printf("|   Damage = %d                            |\n", player->damage);
     printf("+------------------------------------------+\n");
 }
 
