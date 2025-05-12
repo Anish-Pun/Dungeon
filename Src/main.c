@@ -26,6 +26,22 @@ int main() {
         }
         printf("\n");
 
+        // Check for an item in the current room
+        if (currentRoom->Items != ITEM_NONE) {
+            if (currentRoom->Items == ITEM_HEALTH_POTION) {
+                printf("\nYou found a Health Potion! Your HP is restored by 30.\n");
+                player.hp += 30;
+                if (player.hp > 100)
+                    player.hp = 100; // Cap HP at 100
+                printf("Your HP is now: %d\n", player.hp);
+            } else if (currentRoom->Items == ITEM_DAMAGE_BOOST) {
+                printf("\nYou found a Damage Boost! Your damage is permanently increased by 10.\n");
+                player.damage += 10; // Permanently increase damage
+                printf("Your damage is now: %d\n", player.damage);
+            }
+            currentRoom->Items = ITEM_NONE; // Remove the item from the room
+        }
+
         // Prompt the player for an action
         printf("\nEnter your action (D for debug, or choose a room): ");
         char input[10];
