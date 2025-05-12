@@ -4,11 +4,18 @@
 // Maximum connections for each room
 #define MaxConnectedRoom 4
 
+// Item types
+#define ITEM_NONE 0
+#define ITEM_HEALTH_POTION 1
+#define ITEM_DAMAGE_BOOST 2
+
+
 // Structure to represent a room
 struct Room {
     int id;                          // ID for the room
     int connectedRooms[MaxConnectedRoom]; // IDs of the connected rooms
     int ConnectedRoomsCount;         // Number of connected rooms
+    int Items;
 };
 
 struct Dungeon {
