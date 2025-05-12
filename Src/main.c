@@ -1,7 +1,7 @@
+#include "player.h"
+#include "dungeon.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "dungeon.h"
-#include "player.h"
 
 // Function to print the dungeon structure
 int main() {
@@ -10,6 +10,13 @@ int main() {
 
     // Print the dungeon structure
     PrintDungeon(dungeon);
+
+    struct Player player;
+    InitializePlayer(&player);
+
+    while (1){
+        MovePlayer(&player, dungeon);
+    }
 
     // Free the dungeon memory
     FreeDungeon(dungeon);
