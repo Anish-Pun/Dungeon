@@ -16,6 +16,11 @@ struct Room {
     int connectedRooms[MaxConnectedRoom]; // IDs of the connected rooms
     int ConnectedRoomsCount;         // Number of connected rooms
     int Items;
+    int monster;                   // Monster ID 
+    int monsterType;             // Type of monster 
+    int monsterHp;            // Monster health points
+    int monsterDamage;          // Monster's damage
+
 };
 
 struct Dungeon {
