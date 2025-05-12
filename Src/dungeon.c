@@ -48,6 +48,29 @@ struct Dungeon* CreateDungeon(int roomCount) {
         }
     }
 
+    // Place Items randomly in rooms
+    int itemCount = roomCount / 4; // 1/4 of the rooms will have items 
+    int placedHealthPotions = 0;
+    int placedDamageBoosts = 0;
+
+    while (placedHealthPotions + placedDamageBoosts < itemCount) {
+        int randomRoom = rand() % roomCount;
+
+        // check if room is valid and not already occupied
+        if (randomRoom == 0)
+            continue; // Skip Room 0
+        if (dungeon->rooms[randomRoom].Items == ITEM_NONE) {
+            // Alternate between placing health potions and damage boosts
+            if (placedHealthPotions < itemCount / 2) {
+                dungeon->rooms[randomRoom].Items = ITEM_HEALTH_POTION;
+                placedHealthPotions++;
+            } else if (placedDamageBoosts < itemCount / 2) {
+                dungeon->rooms[randomRoom].Items = ITEM_DAMAGE_BOOST;
+                placedDamageBoosts++;
+            }
+        }
+    }
+
     return dungeon;
 }
 
@@ -88,6 +111,20 @@ void PrintDungeon(struct Dungeon* dungeon) {
             printf("%d ", room->connectedRooms[j]);
         }
         printf("\n");
+    }
+    printf("+------------------------------------------+\n");
+
+    printf("| Debug: Item Locations                    |\n");
+    printf("+------------------------------------------+\n");
+
+    // Print item locations
+    for (int i = 0; i < dungeon->roomCount; i++) {
+        struct Room* room = &dungeon->rooms[i];
+        if (room->Items == ITEM_HEALTH_POTION) {
+            printf("Room %d: Health Potion\n", room->id);
+        } else if (room->Items == ITEM_DAMAGE_BOOST) {
+            printf("Room %d: Damage Boost\n", room->id);
+        }
     }
     printf("+------------------------------------------+\n");
 }
