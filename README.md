@@ -54,19 +54,16 @@
 
 ## Progress Summary
 
-| Feature              | Status                  |
-| -------------------- | ----------------------- |
-| Dungeon Generation   | ✅ (Basic complete)     |
-| Player Mechanics     | ✅ (Item usage complete)|
-| Room Content         | ✅ (Item types and monsters complete) |
-| Combat System        | ❌ (Not implemented)    |
-| Treasure (Crown)     | ✅ (implemented)    |
-| Visited Room Tracking| ❌ (Not implemented)    |
-
+| Feature              | Status  |
+| -------------------- | ------- |
+| Dungeon Generation   | ✅ (Basic complete) |
+| Player Mechanics      | ✅ (Item usage complete) |
+| Room Content          | ✅ (Item types and multiple monsters complete) |
+| Bitwise Combat        |  ❌(Not Started yet) |
+| Save_Load           | ❌((Not Started yet)) |
 ---
 
 ## Future Improvements
 - **Combat System**: Implement combat mechanics between the player and monsters.
 - **Visited Room Tracking**: Implement a mechanism to track visited rooms.
 - **Save/Load System**: Use JSON (e.g., `cJSON`) to save and load game progress.
-- **Room Descriptions**: Add unique descriptions for each room to enhance immersion.
