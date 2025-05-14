@@ -37,9 +37,9 @@
     - **Minion**: Low HP and damage.
     - **Mini Boss**: Medium HP and damage.
     - **Boss**: High HP and damage.
+- **Treasure (Crown)**: A crown is placed randomly; finding it ends the game.
 
 **Not Implemented:**
-- **Treasure (Crown)**: A crown is placed randomly; finding it ends the game.
 - **Visited room tracking**: No mechanism to track or clear visited rooms.
 - **Function pointers**: Not used for room functionality or visit tracking.
 
@@ -60,15 +60,13 @@
 | Player Mechanics     | ✅ (Item usage complete)|
 | Room Content         | ✅ (Item types and monsters complete) |
 | Combat System        | ❌ (Not implemented)    |
-| Treasure (Crown)     | ❌ (Not implemented)    |
+| Treasure (Crown)     | ✅ (implemented)    |
 | Visited Room Tracking| ❌ (Not implemented)    |
 
 ---
 
 ## Future Improvements
 - **Combat System**: Implement combat mechanics between the player and monsters.
-- **Treasure Implementation**: Add a crown that ends the game when found.
 - **Visited Room Tracking**: Implement a mechanism to track visited rooms.
 - **Save/Load System**: Use JSON (e.g., `cJSON`) to save and load game progress.
-- **Enhanced Combat**: Add more complex combat mechanics, such as special abilities or critical hits.
 - **Room Descriptions**: Add unique descriptions for each room to enhance immersion.
