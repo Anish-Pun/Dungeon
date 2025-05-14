@@ -16,8 +16,8 @@ void InitializePlayer(struct Player *player)
     }
 
     player->currentRoom = 0; // Start in Room 0
-    player->hp = 100;     // Set initial health points
-    player->damage = 20;  // Set initial damage
+    player->hp = 100;        // Set initial health points
+    player->damage = 20;     // Set initial damage
     // Welcome message & Instructions
     printf("\n+------------------------------------------+\n");
     printf("| Welcome, %s!                              |\n", player->name);

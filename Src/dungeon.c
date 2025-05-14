@@ -126,14 +126,12 @@ struct Dungeon *CreateDungeon(int roomCount)
         }
     }
 
-    //Place the Crown in a random room.
-
+    // Place the Crown in a random room.
     int crownRoom;
     do
     {
         crownRoom = rand() % roomCount;
-    }
-    while (crownRoom == 0 || dungeon->rooms[crownRoom].monster);
+    } while (crownRoom == 0 || dungeon->rooms[crownRoom].monster);
     dungeon->rooms[crownRoom].Crown = 1; // Place the crown in the room
     return dungeon;
 }
@@ -225,7 +223,7 @@ void PrintDungeon(struct Dungeon *dungeon)
         {
             printf("Room %d: Damage Boost\n", room->id);
         }
-        if(room->Crown)
+        if (room->Crown)
         {
             printf("Room %d: Crown\n", room->id);
         }
