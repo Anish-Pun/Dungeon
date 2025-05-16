@@ -82,3 +82,21 @@ void MovePlayer(struct Player *player, struct Dungeon *dungeon)
         }
     }
 }
+
+void Combat(struct Player * player, struct Room *room)
+{
+    // Displaying the monsters 
+    if (room ->monsterType == 1)
+    {
+        printf("Minion has appeared \n");
+    }
+    else if (room ->monsterType == 2)
+    {
+        printf("Mini Boss has appeared \n ");
+    }
+    else if (room ->monsterType == 3)
+    {
+        printf("Boss has appeared \n");
+    }
+    printf("Combat Begins! \n");
+}

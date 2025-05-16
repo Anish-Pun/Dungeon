@@ -87,6 +87,12 @@ int main()
                     printf("\nCongratulations! You found the Crown in Room %d. You win!\n", player.currentRoom);
                     break; // Exit the game loop
                 }
+
+                // Check for the monster in the room
+                if (currentRoom->monster)
+                {
+                    Combat(&player, currentRoom);
+                }
             }
             else
             {

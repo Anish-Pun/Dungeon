@@ -15,5 +15,6 @@ struct Player
 // Function prototypes
 void InitializePlayer(struct Player *player);
 void MovePlayer(struct Player *player, struct Dungeon *dungeon);
+void Combat(struct Player * player, struct Room *room);
 
 #endif // PLAYER_H
