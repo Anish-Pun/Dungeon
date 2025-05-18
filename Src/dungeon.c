@@ -84,6 +84,9 @@ struct Dungeon *CreateDungeon(int roomCount)
         }
     }
 
+    // Debugging: Ensure both item types are placed
+    printf("\nDebug: Items placed - Health Potions: %d, Damage Boosts: %d\n", placedHealthPotions, placedDamageBoosts);
+
     int monsterCount = 3;  // 3 monsters in the dungeon
     int placedMonster = 0; // Counter for placed monsters
 
@@ -163,72 +166,6 @@ void ConnectRooms(struct Dungeon *dungeon, int room1, int room2)
         r1->connectedRooms[r1->ConnectedRoomsCount++] = room2;
         r2->connectedRooms[r2->ConnectedRoomsCount++] = room1;
     }
-}
-
-// Print the dungeon structure
-void PrintDungeon(struct Dungeon *dungeon)
-{
-    printf("\n+------------------------------------------+\n");
-    printf("| Dungeon Structure                        |\n");
-    printf("+------------------------------------------+\n");
-
-    for (int i = 0; i < dungeon->roomCount; i++)
-    {
-        struct Room *room = &dungeon->rooms[i];
-        printf("Room %d: ", room->id);
-        for (int j = 0; j < room->ConnectedRoomsCount; j++)
-        {
-            printf("%d ", room->connectedRooms[j]);
-        }
-        printf("\n");
-    }
-    printf("\n+------------------------------------------+\n");
-    printf("| Debug: Monster and Crown Locations       |\n");
-    printf("+------------------------------------------+\n");
-
-    // Print monster and crown locations
-    for (int i = 0; i < dungeon->roomCount; i++)
-    {
-        struct Room *room = &dungeon->rooms[i];
-        if (room->monster)
-        {
-            if (room->monsterType == 1)
-            {
-                printf("Room %d: Low-level Minion (HP %d, Damage %d)\n", room->id, room->monsterHp, room->monsterDamage);
-            }
-            else if (room->monsterType == 2)
-            {
-                printf("Room %d: Mini Boss (HP %d, Damage %d)\n", room->id, room->monsterHp, room->monsterDamage);
-            }
-            else if (room->monsterType == 3)
-            {
-                printf("Room %d: Boss (HP %d, Damage %d)\n", room->id, room->monsterHp, room->monsterDamage);
-            }
-        }
-    }
-
-    printf("+------------------------------------------+\n");
-    printf("| Debug: Item Locations                    |\n");
-    printf("+------------------------------------------+\n");
-
-    // Print item locations
-    for (int i = 0; i < dungeon->roomCount; i++)
-    {
-        struct Room *room = &dungeon->rooms[i];
-        if (room->Items == ITEM_HEALTH_POTION)
-        {
-            printf("Room %d: Health Potion\n", room->id);
-        }
-        else if (room->Items == ITEM_DAMAGE_BOOST)
-        {
-            printf("Room %d: Damage Boost\n", room->id);
-        }
-        if (room->Crown)
-        {
-            printf("Room %d: Crown\n", room->id);
-        }
-    }
-    printf("+------------------------------------------+\n");
 }
 
 // Free the memory allocated for the dungeon

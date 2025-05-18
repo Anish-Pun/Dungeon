@@ -7,6 +7,7 @@
 void InitializePlayer(struct Player *player)
 {
     printf("What is your name? ");
+    while (getchar() != '\n'); // Clear the input buffer
     fgets(player->name, sizeof(player->name), stdin);
     // Remove trailing newline character
     size_t len = strlen(player->name);
@@ -14,11 +15,9 @@ void InitializePlayer(struct Player *player)
     {
         player->name[len - 1] = '\0';
     }
-
     player->currentRoom = 0; // Start in Room 0
-    player->hp = 100;        // Set initial health points
-    player->damage = 20;     // Set initial damage
-    // Welcome message & Instructions
+    player->hp = 100;        // Default health points
+    player->damage = 20;     // Default damage
     printf("\n+------------------------------------------+\n");
     printf("| Welcome, %s!                              |\n", player->name);
     printf("+------------------------------------------+\n");
@@ -28,7 +27,7 @@ void InitializePlayer(struct Player *player)
     printf("| monsters in some rooms, so choose wisely.|\n");
     printf("+------------------------------------------+\n");
     printf("| Your stats:                              |\n");
-    printf("|   HP     = %d                           |\n", player->hp);
+    printf("|   HP     = %d                            |\n", player->hp);
     printf("|   Damage = %d                            |\n", player->damage);
     printf("+------------------------------------------+\n");
 }
@@ -38,7 +37,6 @@ void MovePlayer(struct Player *player, struct Dungeon *dungeon)
 {
     struct Room *currentRoom = &dungeon->rooms[player->currentRoom];
 
-    // Display connected rooms
     printf("\nIn front of you, you see %d room(s): ", currentRoom->ConnectedRoomsCount);
     for (int i = 0; i < currentRoom->ConnectedRoomsCount; i++)
     {
@@ -87,11 +85,16 @@ void Combat(struct Player *player, struct Room *room)
 {
     // Display monster
     printf("\n+----------------------------------+\n");
-    if (room->monsterType == 1) {
+    if (room->monsterType == 1)
+    {
         printf("| A low-level minion appears!      |\n");
-    } else if (room->monsterType == 2) {
+    }
+    else if (room->monsterType == 2)
+    {
         printf("| A mid-level mini boss appears!   |\n");
-    } else if (room->monsterType == 3) {
+    }
+    else if (room->monsterType == 3)
+    {
         printf("| A high-level boss appears!       |\n");
     }
     printf("| Combat begins!                   |\n");
@@ -99,11 +102,12 @@ void Combat(struct Player *player, struct Room *room)
 
     while (player->hp > 0 && room->monsterHp > 0)
     {
-        
+
         int randomNumber = rand() % 17; // Random Number { 0 - 16}
         printf("\n+----------------------------------+\n");
         printf("| Random number for this round:%2d  |(binary: ", randomNumber);
-        for (int i = 4; i >= 0; i--) {
+        for (int i = 4; i >= 0; i--)
+        {
             printf("%d", (randomNumber >> i) & 1);
         }
         printf(")\n");

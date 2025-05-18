@@ -64,6 +64,5 @@
 ---
 
 ## Future Improvements
-- **Combat System**: Implement combat mechanics between the player and monsters.
 - **Visited Room Tracking**: Implement a mechanism to track visited rooms.
 - **Save/Load System**: Use JSON (e.g., `cJSON`) to save and load game progress.

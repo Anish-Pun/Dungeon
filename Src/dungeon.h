@@ -32,7 +32,6 @@ struct Dungeon
 // Function prototypes
 struct Dungeon *CreateDungeon(int roomCount);
 void ConnectRooms(struct Dungeon *dungeon, int room1, int room2);
-void PrintDungeon(struct Dungeon *dungeon);
 void FreeDungeon(struct Dungeon *dungeon);
 
 #endif // DUNGEON_H
