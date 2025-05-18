@@ -85,30 +85,29 @@ void MovePlayer(struct Player *player, struct Dungeon *dungeon)
 
 void Combat(struct Player *player, struct Room *room)
 {
-    // Displaying the monsters
-    if (room->monsterType == 1)
-    {
-        printf("Minion has appeared \n");
+    // Display monster
+    printf("\n+----------------------------------+\n");
+    if (room->monsterType == 1) {
+        printf("| A low-level minion appears!      |\n");
+    } else if (room->monsterType == 2) {
+        printf("| A mid-level mini boss appears!   |\n");
+    } else if (room->monsterType == 3) {
+        printf("| A high-level boss appears!       |\n");
     }
-    else if (room->monsterType == 2)
-    {
-        printf("Mini Boss has appeared \n ");
-    }
-    else if (room->monsterType == 3)
-    {
-        printf("Boss has appeared \n");
-    }
-    printf("Combat Begins! \n");
+    printf("| Combat begins!                   |\n");
+    printf("+----------------------------------+\n");
 
     while (player->hp > 0 && room->monsterHp > 0)
     {
-        int randomNumber = rand() % 17; // { 0 - 16}
+        
+        int randomNumber = rand() % 17; // Random Number { 0 - 16}
+        printf("\n+----------------------------------+\n");
         printf("| Random number for this round:%2d  |(binary: ", randomNumber);
-        for (int i = 4; i >= 0; i--)
-        {
+        for (int i = 4; i >= 0; i--) {
             printf("%d", (randomNumber >> i) & 1);
         }
         printf(")\n");
+        printf("+----------------------------------+\n");
 
         // processing the bits
 
@@ -127,7 +126,7 @@ void Combat(struct Player *player, struct Room *room)
                 {
                     printf("+----------------------------------+\n");
                     printf("| You have been defeated by the    |\n");
-                    printf("| monster. Game over!              |\n");
+                    printf("| monster :/. Game over!              |\n");
                     printf("+----------------------------------+\n");
                     exit(0); // End the game
                 }

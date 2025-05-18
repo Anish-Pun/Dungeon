@@ -59,7 +59,7 @@
 | Dungeon Generation   | ✅ (Basic complete) |
 | Player Mechanics      | ✅ (Item usage complete) |
 | Room Content          | ✅ (Item types and multiple monsters complete) |
-| Bitwise Combat        |  ❌(Not Started yet) |
+| Bitwise Combat        | ✅(Basic Combat) |
 | Save_Load           | ❌((Not Started yet)) |
 ---
 
