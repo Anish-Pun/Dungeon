@@ -83,20 +83,77 @@ void MovePlayer(struct Player *player, struct Dungeon *dungeon)
     }
 }
 
-void Combat(struct Player * player, struct Room *room)
+void Combat(struct Player *player, struct Room *room)
 {
-    // Displaying the monsters 
-    if (room ->monsterType == 1)
+    // Displaying the monsters
+    if (room->monsterType == 1)
     {
         printf("Minion has appeared \n");
     }
-    else if (room ->monsterType == 2)
+    else if (room->monsterType == 2)
     {
         printf("Mini Boss has appeared \n ");
     }
-    else if (room ->monsterType == 3)
+    else if (room->monsterType == 3)
     {
         printf("Boss has appeared \n");
     }
     printf("Combat Begins! \n");
+
+    while (player->hp > 0 && room->monsterHp > 0)
+    {
+        int randomNumber = rand() % 17; // { 0 - 16}
+        printf("| Random number for this round:%2d  |(binary: ", randomNumber);
+        for (int i = 4; i >= 0; i--)
+        {
+            printf("%d", (randomNumber >> i) & 1);
+        }
+        printf(")\n");
+
+        // processing the bits
+
+        for (int i = 4; i >= 0; i--)
+        {
+            int bit = (randomNumber >> i) & 1;
+
+            if (bit == 0)
+            {
+                // Monster attacks player
+                player->hp -= room->monsterDamage;
+                printf("| Monster attacks! You lose %2d HP. |\n", room->monsterDamage);
+                printf("| Your HP: %3d                     |\n", player->hp);
+
+                if (player->hp <= 0)
+                {
+                    printf("+----------------------------------+\n");
+                    printf("| You have been defeated by the    |\n");
+                    printf("| monster. Game over!              |\n");
+                    printf("+----------------------------------+\n");
+                    exit(0); // End the game
+                }
+            }
+            else
+            {
+                // Player attacks monster
+                room->monsterHp -= player->damage;
+                printf("| You attack! Monster loses %2d HP. |\n", player->damage);
+                printf("| Monster HP: %3d                  |\n", room->monsterHp);
+
+                if (room->monsterHp <= 0)
+                {
+                    printf("+----------------------------------+\n");
+                    printf("| You defeated the monster!        |\n");
+                    printf("+----------------------------------+\n");
+                    room->monster = 0; // Monster is defeated
+
+                    // Display player's remaining HP after the battle
+                    printf("+----------------------------------+\n");
+                    printf("| Your remaining HP: %3d           |\n", player->hp);
+                    printf("+----------------------------------+\n");
+
+                    return; // Exit the combat
+                }
+            }
+        }
+    }
 }
