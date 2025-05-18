@@ -47,8 +47,12 @@
 
 ## Combat System
 
-**Not Implemented:**
-- The combat system is not yet implemented. While monsters are placed in rooms, there is no logic for combat between the player and monsters.
+**Implemented:**
+- Random bitwise Combat: A random number between 0 - 16 is generated each round and converts it to binary.
+- Turn-based attacks:
+    ` 0 ` = Monster attacks.
+    ` 1 ` = Player attacks.
+- Multiple Rounds: New round starts if both fighter survives a round.
 
 ---
 
