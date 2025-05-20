@@ -30,6 +30,11 @@ struct Dungeon *CreateDungeon(int roomCount)
     {
         dungeon->rooms[i].id = i;
         dungeon->rooms[i].ConnectedRoomsCount = 0;
+        dungeon->rooms[i].monster = 0;
+        dungeon->rooms[i].Crown = 0;
+        dungeon->rooms[i].monsterHp = 0;
+        dungeon->rooms[i].monsterDamage = 0;
+        dungeon->rooms[i].Items = ITEM_NONE; // No item by default
         for (int j = 0; j < MaxConnectedRoom; j++)
         {
             dungeon->rooms[i].connectedRooms[j] = -1; // Initialize with -1 (no connection)
