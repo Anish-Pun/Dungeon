@@ -44,7 +44,7 @@ int main()
             printf("\nLoading a saved game...\n");
             printf("\nGame loaded successfully!\n");
             printf("Nah jk this does not work gg\n");
-            break; // Proceed to the game loop with loaded data
+            continue; // Go back to the menu
         }
         else if (choice == 3)
         {
