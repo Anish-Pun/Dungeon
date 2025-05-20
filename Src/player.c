@@ -6,7 +6,14 @@
 // Initialize the player
 void InitializePlayer(struct Player *player)
 {
-    printf("What is your name? ");
+    printf("\n+------------------------------------------+\n");
+    printf("| Welcome, hero!                           |\n");
+    printf("| You stand at the entrance of the dungeon |\n");
+    printf("| where legends are born and lost.         |\n");
+    printf("+------------------------------------------+\n");
+    printf("| What is your name, brave adventurer?     |\n");
+    printf("+------------------------------------------+\n");
+    printf("> ");
     while (getchar() != '\n'); // Clear the input buffer
     fgets(player->name, sizeof(player->name), stdin);
     // Remove trailing newline character
@@ -21,10 +28,10 @@ void InitializePlayer(struct Player *player)
     printf("\n+------------------------------------------+\n");
     printf("| Welcome, %s!                              |\n", player->name);
     printf("+------------------------------------------+\n");
-    printf("| You have been spawned in Room 0.         |\n");
-    printf("| Your goal is to get the crown and win    |\n");
-    printf("| the game, but be careful! There are      |\n");
-    printf("| monsters in some rooms, so choose wisely.|\n");
+    printf("| You awaken in the depths of Room 0.      |\n");
+    printf("| Your quest: Find the legendary crown     |\n");
+    printf("| and escape the dungeon alive.            |\n");
+    printf("| Beware: Monsters lurk in the shadows.    |\n");
     printf("+------------------------------------------+\n");
     printf("| Your stats:                              |\n");
     printf("|   HP     = %d                            |\n", player->hp);
