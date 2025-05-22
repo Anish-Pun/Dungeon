@@ -31,6 +31,10 @@ void SaveGame(struct Player* player, struct Dungeon* dungeon, const char* filena
         cJSON_AddItemToObject(roomData, "connectedRooms",
         cJSON_CreateIntArray(room->connectedRooms, room->ConnectedRoomsCount));
 
+        if (room->Crown)
+        {
+            cJSON_AddBoolToObject(roomData, "Crown", 1);
+        }
         cJSON_AddItemToArray(roomsArray, roomData);
     }
     cJSON_AddItemToObject(dungeonData, "rooms", roomsArray);
