@@ -31,9 +31,17 @@ void SaveGame(struct Player* player, struct Dungeon* dungeon, const char* filena
         cJSON_AddItemToObject(roomData, "connectedRooms",
         cJSON_CreateIntArray(room->connectedRooms, room->ConnectedRoomsCount));
 
+        // Save Crown location in save file
         if (room->Crown)
         {
             cJSON_AddBoolToObject(roomData, "Crown", 1);
+        }
+
+        // Save Item location in save file
+        if (room->Items == ITEM_HEALTH_POTION) {
+            cJSON_AddStringToObject(roomData, "Item", "Health Potion");
+        } else if (room->Items == ITEM_DAMAGE_BOOST) {
+            cJSON_AddStringToObject(roomData, "Item", "Damage Boost");
         }
         cJSON_AddItemToArray(roomsArray, roomData);
     }

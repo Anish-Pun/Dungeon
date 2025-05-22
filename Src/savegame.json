@@ -1,7 +1,7 @@
 {
 	"player":	{
 		"name":	"Anish",
-		"currentRoom":	5,
+		"currentRoom":	3,
 		"hp":	100,
 		"damage":	20
 	},
@@ -9,35 +9,37 @@
 		"roomCount":	10,
 		"rooms":	[{
 				"id":	0,
-				"connectedRooms":	[1, 5, 6, 2]
+				"connectedRooms":	[1, 2, 3, 7]
 			}, {
 				"id":	1,
-				"connectedRooms":	[0, 2, 4, 7]
+				"connectedRooms":	[0]
 			}, {
 				"id":	2,
-				"connectedRooms":	[1, 3, 8, 0]
+				"connectedRooms":	[0]
 			}, {
 				"id":	3,
-				"connectedRooms":	[2, 7, 5]
+				"connectedRooms":	[0, 4, 5, 6]
 			}, {
 				"id":	4,
-				"connectedRooms":	[1],
-				"Crown":	true
+				"connectedRooms":	[3]
 			}, {
 				"id":	5,
-				"connectedRooms":	[0, 6, 3, 9]
+				"connectedRooms":	[3, 6, 8, 9],
+				"Crown":	true,
+				"Item":	"Health Potion"
 			}, {
 				"id":	6,
-				"connectedRooms":	[0, 5]
+				"connectedRooms":	[5, 8, 3],
+				"Item":	"Damage Boost"
 			}, {
 				"id":	7,
-				"connectedRooms":	[1, 3]
+				"connectedRooms":	[0, 9]
 			}, {
 				"id":	8,
-				"connectedRooms":	[2, 9]
+				"connectedRooms":	[5, 9, 6]
 			}, {
 				"id":	9,
-				"connectedRooms":	[8, 5]
+				"connectedRooms":	[8, 7, 5]
 			}]
 	}
 }
