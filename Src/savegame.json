@@ -1,8 +1,42 @@
 {
 	"player":	{
 		"name":	"Anish",
-		"currentRoom":	8,
-		"hp":	94,
+		"currentRoom":	3,
+		"hp":	100,
 		"damage":	20
+	},
+	"dungeon":	{
+		"roomCount":	10,
+		"rooms":	[{
+				"id":	0,
+				"connectedRooms":	[1, 3]
+			}, {
+				"id":	1,
+				"connectedRooms":	[0, 2, 6, 9]
+			}, {
+				"id":	2,
+				"connectedRooms":	[1, 4, 5, 9]
+			}, {
+				"id":	3,
+				"connectedRooms":	[0, 5]
+			}, {
+				"id":	4,
+				"connectedRooms":	[2, 7, 5]
+			}, {
+				"id":	5,
+				"connectedRooms":	[2, 8, 4, 3]
+			}, {
+				"id":	6,
+				"connectedRooms":	[1, 9]
+			}, {
+				"id":	7,
+				"connectedRooms":	[4, 9]
+			}, {
+				"id":	8,
+				"connectedRooms":	[5]
+			}, {
+				"id":	9,
+				"connectedRooms":	[6, 7, 2, 1]
+			}]
 	}
 }
