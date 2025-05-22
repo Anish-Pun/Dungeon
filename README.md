@@ -56,6 +56,11 @@
 
 ---
 
+## Game Flowchart 
+![Dungeon Game Flowchart](./GameFlowChart.png)
+
+---
+
 ## Progress Summary
 
 | Feature              | Status  |
