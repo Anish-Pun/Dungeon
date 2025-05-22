@@ -2,7 +2,7 @@
 #include "dungeon.h"
 #include "player.h"
 #include <stdlib.h>
-// #include "save_load.h"
+#include "save_load.h"
 
 
 void DebugDungeon(struct Dungeon *dungeon);
@@ -76,7 +76,7 @@ int main()
         printf("\n");
 
         // Prompt for action
-        printf("\nEnter your action (D for debug, or choose a room): ");
+        printf("\nEnter your action | D for debug | S for save |, or choose a room): ");
         char input[10];
         scanf("%s", input);
 
@@ -84,6 +84,13 @@ int main()
         if (input[0] == 'D' || input[0] == 'd')
         {
             DebugDungeon(dungeon);
+            continue; // Return to the game loop
+        }
+
+        // Save game
+        if (input[0] == 'S' || input[0] == 's')
+        {
+            SaveGame(&player, dungeon, "savegame.json");
             continue; // Return to the game loop
         }
 

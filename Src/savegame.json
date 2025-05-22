@@ -1,0 +1,8 @@
+{
+	"player":	{
+		"name":	"Anish",
+		"currentRoom":	8,
+		"hp":	94,
+		"damage":	20
+	}
+}
