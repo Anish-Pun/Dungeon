@@ -43,6 +43,23 @@ void SaveGame(struct Player* player, struct Dungeon* dungeon, const char* filena
         } else if (room->Items == ITEM_DAMAGE_BOOST) {
             cJSON_AddStringToObject(roomData, "Item", "Damage Boost");
         }
+
+        // Add monster details if present
+        if (room->monster) {
+            cJSON* monsterData = cJSON_CreateObject();
+            if (room->monsterType == 1) {
+                cJSON_AddStringToObject(monsterData, "type", "Low-level Minion");
+            } else if (room->monsterType == 2) {
+                cJSON_AddStringToObject(monsterData, "type", "Mini Boss");
+            } else if (room->monsterType == 3) {
+                cJSON_AddStringToObject(monsterData, "type", "Boss");
+            }
+            cJSON_AddNumberToObject(monsterData, "hp", room->monsterHp);
+            cJSON_AddNumberToObject(monsterData, "damage", room->monsterDamage);
+            cJSON_AddItemToObject(roomData, "monster", monsterData);
+        }
+
+
         cJSON_AddItemToArray(roomsArray, roomData);
     }
     cJSON_AddItemToObject(dungeonData, "rooms", roomsArray);
