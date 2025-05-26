@@ -41,13 +41,19 @@ int main()
             break; // Proceed to the game loop
         }
 
-        else if (choice == 2)
-        {
+        else if (choice == 2) {
             printf("\nLoading a saved game...\n");
+            dungeon = malloc(sizeof(struct Dungeon));
+            if (!LoadGame(&player, dungeon, "savegame.json")) { 
+                printf("\nFailed to load the game. Starting a new game instead.\n");
+                free(dungeon);
+                dungeon = NULL;
+                continue; // Return to the main menu
+            }
             printf("\nGame loaded successfully!\n");
-            printf("Nah jk this does not work gg\n");
-            continue; // Go back to the menu
+            break; 
         }
+        
         else if (choice == 3)
         {
             printf("\nExiting the game. Goodbye!\n");

@@ -1,60 +1,54 @@
 {
 	"player":	{
 		"name":	"Anish",
-		"currentRoom":	0,
-		"hp":	100,
-		"damage":	20
+		"currentRoom":	7,
+		"hp":	70,
+		"damage":	30
 	},
 	"dungeon":	{
 		"roomCount":	10,
 		"rooms":	[{
 				"id":	0,
-				"connectedRooms":	[1, 7, 9]
+				"connectedRooms":	[1, 3, 6, 8]
 			}, {
 				"id":	1,
-				"connectedRooms":	[0, 2, 3, 9],
-				"Crown":	true,
-				"Item":	"Health Potion"
+				"connectedRooms":	[0, 2, 4, 5]
 			}, {
 				"id":	2,
-				"connectedRooms":	[1, 4, 5, 7],
-				"Item":	"Damage Boost"
+				"connectedRooms":	[1, 8, 7]
 			}, {
 				"id":	3,
-				"connectedRooms":	[1, 8]
+				"connectedRooms":	[0, 7]
 			}, {
 				"id":	4,
-				"connectedRooms":	[2, 6, 9],
-				"monster":	{
-					"type":	"Boss",
-					"hp":	75,
-					"damage":	15
-				}
+				"connectedRooms":	[1, 8]
 			}, {
 				"id":	5,
-				"connectedRooms":	[2]
-			}, {
-				"id":	6,
-				"connectedRooms":	[4],
-				"monster":	{
-					"type":	"Low-level Minion",
-					"hp":	25,
-					"damage":	3
-				}
-			}, {
-				"id":	7,
-				"connectedRooms":	[0, 8, 2],
+				"connectedRooms":	[1, 8, 6],
 				"monster":	{
 					"type":	"Mini Boss",
 					"hp":	50,
 					"damage":	10
 				}
 			}, {
+				"id":	6,
+				"connectedRooms":	[0, 9, 5]
+			}, {
+				"id":	7,
+				"connectedRooms":	[3, 2]
+			}, {
 				"id":	8,
-				"connectedRooms":	[7, 3]
+				"connectedRooms":	[5, 2, 4, 0],
+				"Item":	"Health Potion",
+				"monster":	{
+					"type":	"Boss",
+					"hp":	75,
+					"damage":	15
+				}
 			}, {
 				"id":	9,
-				"connectedRooms":	[0, 1, 4]
+				"connectedRooms":	[6],
+				"Crown":	true
 			}]
 	}
 }

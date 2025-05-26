@@ -5,6 +5,7 @@
 #include "dungeon.h"
 
 void SaveGame(struct Player* player, struct Dungeon* dungeon, const char* filename) ;
+int LoadGame(struct Player* player, struct Dungeon* dungeon, const char* filename);
 #endif // SAVE_LOAD_H
 
 
