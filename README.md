@@ -38,11 +38,6 @@
     - **Mini Boss**: Medium HP and damage.
     - **Boss**: High HP and damage.
 - **Treasure (Crown)**: A crown is placed randomly; finding it ends the game.
-
-**Not Implemented:**
-- **Visited room tracking**: No mechanism to track or clear visited rooms.
-- **Function pointers**: Not used for room functionality or visit tracking.
-
 ---
 
 ## Combat System
@@ -69,9 +64,5 @@
 | Player Mechanics      | ✅ (Item usage complete) |
 | Room Content          | ✅ (Item types and multiple monsters complete) |
 | Bitwise Combat        | ✅(Basic Combat) |
-| Save_Load           | ❌((Not Started yet)) |
+| Save_Load           | ✅(Basic Combat) |
 ---
-
-## Future Improvements
-- **Visited Room Tracking**: Implement a mechanism to track visited rooms.
-- **Save/Load System**: Use JSON (e.g., `cJSON`) to save and load game progress.
